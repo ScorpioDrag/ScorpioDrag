@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0d5f88;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background-color: #DFBBB1;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .forgot-password {
+            text-align: right;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm" onsubmit="return validateForm()">
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <label for="remember-me">
+                <input type="checkbox" id="remember-me" name="remember-me"> Remember Me
+            </label><br>
+            <input type="submit" value="Login">
+        </form>
+        <div class="forgot-password">
+         <a href="New password.html">Forgot Password?</a>
+        </div>
+        <div class="register">
+            <p>Don't have an account? <a href="register.html">Register</a></p>
+
+            <footer>
+                <p>&copy; 2024 ScorpioDrag's Community</p>
+            </footer>
+            
+            <ul>
+                <ul><a href="index.html"><button>Home</button></a></li>
+            </ul>
+
+        </div>
+    </div>
+<script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+    
+            // You can add more sophisticated validation here if needed
+    
+            if (username === "your_username" && password === "your_password") {
+                // Authentication successful, redirect to chat interface
+                window.location.href = "chat1.html";
+                return false; // Prevent form submission
+            } else {
+                alert("Invalid username or password");
+                return false; // Prevent form submission
+            }
+        }
+</script>
+</body>
+</html>
+          

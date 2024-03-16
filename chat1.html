@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Chat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #90c7e2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #DFBBB1;
+            border: 1px solid #000000;
+            border-radius: 5px;
+        }
+        #messages {
+            list-style-type: none;
+            padding: 0;
+        }
+        #messages li {
+            margin-bottom: 10px;
+        }
+        #messages li:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Simple Chat</h1>
+        <div id="chat">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name">
+            <button onclick="setName()">Set Name</button>
+            <br>
+            <label for="message">Message:</label>
+            <input type="text" id="message">
+            <button onclick="sendMessage()">Send</button>
+            <ul id="messages"></ul>
+        </div>
+    </div>
+
+    <script>
+        let name = '';
+
+        function setName() {
+            name = document.getElementById('name').value;
+            document.getElementById('name').disabled = true;
+        }
+
+        function sendMessage() {
+            const messageInput = document.getElementById('message');
+            const message = messageInput.value.trim();
+            messageInput.value = '';
+
+            if (message !== '') {
+                const messagesContainer = document.getElementById('messages');
+                const li = document.createElement('li');
+                li.textContent = `${name}: ${message}`;
+                messagesContainer.appendChild(li);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight 
+            }
+        }
+    </script>
+</body>
+</html>
